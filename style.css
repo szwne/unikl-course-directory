@@ -1,0 +1,1025 @@
+/* =====================================================
+   GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1d2a3a;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.site-header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e9f0;
+
+    /* Changed from sticky so the header scrolls away normally */
+    position: relative;
+
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    text-decoration: none;
+    color: #123a68;
+}
+
+.unikl-logo {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+.site-title {
+    border-left: 1px solid #d9dee7;
+    padding-left: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 1.5px;
+}
+
+.site-title span {
+    color: #667085;
+}
+
+.site-title strong {
+    color: #123a68;
+    font-size: 14px;
+}
+
+
+/* NAVIGATION */
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-link {
+    position: relative;
+
+    text-decoration: none;
+    color: #465467;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 10px 0;
+
+    transition: 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #123a68;
+}
+
+.nav-link.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #d6a62f;
+}
+
+
+/* =====================================================
+   HERO - UNIKL CAMPUS PHOTO
+===================================================== */
+
+.hero-section {
+    min-height: 560px;
+
+    display: flex;
+    align-items: center;
+
+    background-image: url("images/unikl-campus.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Decorative white circle */
+
+.hero-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    border: 70px solid rgba(255, 255, 255, 0.08);
+
+    right: -120px;
+    top: -130px;
+
+    z-index: 1;
+}
+
+
+/* Decorative gold circle */
+
+.hero-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    border: 45px solid rgba(214, 166, 47, 0.10);
+
+    left: -130px;
+    bottom: -150px;
+
+    z-index: 1;
+}
+
+
+.hero-content {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 80px 30px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* HERO LABEL */
+
+.hero-label {
+    color: #f1c94b;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
+    margin-bottom: 15px;
+
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+
+/* HERO TITLE */
+
+.hero-content h1 {
+    color: #ffffff;
+
+    font-size: clamp(42px, 6vw, 68px);
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+
+    font-weight: 700;
+
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+}
+
+
+/* HERO DESCRIPTION */
+
+.hero-description {
+    color: #ffffff;
+
+    max-width: 650px;
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-container {
+    max-width: 800px;
+
+    background: #ffffff;
+
+    border-radius: 8px;
+
+    padding: 7px;
+
+    display: flex;
+    align-items: center;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.20);
+}
+
+.search-icon {
+    font-size: 20px;
+
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+.search-container input {
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    padding: 15px 10px;
+
+    font-size: 16px;
+
+    color: #1d2a3a;
+
+    min-width: 0;
+}
+
+.search-container input::placeholder {
+    color: #98a2b3;
+}
+
+.search-button {
+    border: none;
+
+    background: #d6a62f;
+    color: #ffffff;
+
+    padding: 14px 28px;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.search-button:hover {
+    background: #bd9021;
+}
+
+
+/* =====================================================
+   GENERAL SECTION
+===================================================== */
+
+.section-container {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 80px 30px;
+}
+
+.section-heading {
+    margin-bottom: 40px;
+}
+
+.section-label {
+    color: #b18724;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    color: #123a68;
+
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+.section-heading > p:last-child {
+    color: #667085;
+
+    max-width: 650px;
+}
+
+
+/* =====================================================
+   CATEGORIES
+===================================================== */
+
+.categories-section {
+    background: #ffffff;
+}
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.category-card {
+    border: 1px solid #e2e7ef;
+
+    background: #ffffff;
+
+    border-radius: 8px;
+
+    padding: 28px 22px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #d6a62f;
+
+    box-shadow: 0 12px 30px rgba(18, 58, 104, 0.10);
+}
+
+.category-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eef4fa;
+
+    border-radius: 8px;
+
+    font-size: 23px;
+
+    margin-bottom: 20px;
+}
+
+.category-card h3 {
+    color: #173e67;
+
+    font-size: 17px;
+
+    line-height: 1.4;
+
+    margin-bottom: 10px;
+}
+
+.category-card span {
+    color: #9b7620;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   COURSES
+===================================================== */
+
+.courses-section {
+    background: #f5f7fb;
+}
+
+.courses-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 30px;
+}
+
+.course-count {
+    background: #ffffff;
+
+    border: 1px solid #e1e6ed;
+
+    padding: 14px 20px;
+
+    border-radius: 7px;
+
+    color: #667085;
+
+    white-space: nowrap;
+}
+
+.course-count span {
+    color: #123a68;
+
+    font-weight: 700;
+
+    font-size: 20px;
+}
+
+
+/* SEARCH MESSAGE */
+
+.search-message {
+    margin-bottom: 20px;
+
+    color: #667085;
+
+    font-size: 14px;
+}
+
+
+/* COURSE LIST */
+
+.course-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+/* COURSE CARD */
+
+.course-card {
+    background: #ffffff;
+
+    border: 1px solid #dfe5ec;
+
+    border-radius: 12px;
+
+    padding: 24px 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    transition: all 0.25s ease;
+
+    box-shadow: 0 2px 8px rgba(18, 58, 104, 0.03);
+}
+
+.course-card:hover {
+    border-color: #b9c9da;
+
+    box-shadow: 0 10px 28px rgba(18, 58, 104, 0.09);
+
+    transform: translateY(-2px);
+}
+
+.course-information {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.course-code {
+    display: inline-block;
+
+    color: #a77b18;
+
+    background: #faf6e8;
+
+    border: 1px solid #eee2bd;
+
+    border-radius: 5px;
+
+    padding: 5px 10px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    margin-bottom: 10px;
+}
+
+.course-name {
+    color: #173e67;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    margin-bottom: 6px;
+}
+
+.course-category {
+    color: #6f7d8d;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   COURSE BUTTONS
+===================================================== */
+
+.course-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* VIEW SYLLABUS BUTTON */
+
+.view-syllabus-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 135px;
+
+    border: 1px solid #123a68;
+
+    background: #123a68;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    padding: 12px 20px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+
+    transition: all 0.25s ease;
+}
+
+.view-syllabus-button:hover {
+    background: #0c2b4c;
+
+    border-color: #0c2b4c;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 5px 12px rgba(18, 58, 104, 0.18);
+}
+
+
+/* DOWNLOAD BUTTON */
+
+.download-syllabus-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 135px;
+
+    border: 1px solid #d6a62f;
+
+    background: #ffffff;
+
+    color: #9b7620;
+
+    text-decoration: none;
+
+    padding: 12px 20px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+
+    transition: all 0.25s ease;
+}
+
+.download-syllabus-button:hover {
+    background: #faf6e8;
+
+    border-color: #bd9021;
+
+    color: #806318;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 5px 12px rgba(214, 166, 47, 0.15);
+}
+
+
+/* EMPTY RESULT */
+
+.no-results {
+    background: #ffffff;
+
+    border: 1px solid #e1e6ed;
+
+    border-radius: 8px;
+
+    padding: 50px 25px;
+
+    text-align: center;
+
+    color: #667085;
+}
+
+.no-results h3 {
+    color: #173e67;
+
+    margin-bottom: 8px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.site-footer {
+    background: #e87524;
+    color: #ffffff;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.footer-logo {
+    width: 145px;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer-brand p {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.footer-info {
+    text-align: right;
+    color: rgba(255, 255, 255, 0.90);
+    font-size: 14px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    text-align: center;
+    padding: 20px 30px;
+    background: #d9651d;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-navigation {
+        gap: 20px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    /* HEADER */
+
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 14px 20px;
+    }
+
+    .logo-area {
+        gap: 10px;
+    }
+
+    .unikl-logo {
+        width: 125px;
+    }
+
+    .site-title {
+        font-size: 10px;
+        padding-left: 10px;
+    }
+
+    .site-title strong {
+        font-size: 12px;
+    }
+
+    .main-navigation {
+        width: 100%;
+        justify-content: center;
+        gap: 22px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+    }
+
+
+    /* HERO */
+
+    .hero-section {
+        min-height: 520px;
+    }
+
+    .hero-content {
+        padding: 65px 20px;
+    }
+
+    .hero-label {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+        line-height: 1.15;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+
+    /* SEARCH */
+
+    .search-container {
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 8px;
+    }
+
+    .search-icon {
+        margin-left: 10px;
+    }
+
+    .search-container input {
+        width: 100%;
+        min-width: 0;
+        padding: 14px 8px;
+    }
+
+    .search-button {
+        width: 100%;
+        padding: 13px 20px;
+    }
+
+
+    /* SECTIONS */
+
+    .section-container {
+        padding: 60px 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+
+    /* CATEGORIES */
+
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .category-card {
+        padding: 24px 20px;
+    }
+
+
+    /* COURSES HEADER */
+
+    .courses-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .course-count {
+        width: 100%;
+    }
+
+
+    /* COURSE CARDS */
+
+    .course-card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+        gap: 18px;
+    }
+
+    .course-code {
+        font-size: 11px;
+    }
+
+    .course-name {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .course-category {
+        font-size: 12px;
+    }
+
+
+    /* COURSE BUTTONS */
+
+    .course-actions {
+        width: 100%;
+
+        display: flex;
+
+        gap: 10px;
+    }
+
+    .view-syllabus-button,
+    .download-syllabus-button {
+        flex: 1;
+
+        min-width: 0;
+
+        padding: 12px 10px;
+
+        font-size: 12px;
+
+        text-align: center;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .footer-info {
+        text-align: left;
+    }
+
+    .footer-brand {
+        align-items: flex-start;
+    }
+
+
+    /* BACK TO TOP */
+
+    .back-to-top {
+        right: 20px;
+        bottom: 20px;
+        width: 42px;
+        height: 42px;
+    }
+
+}
+
+
+/* =====================================================
+   BACK TO TOP BUTTON
+===================================================== */
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+
+    width: 46px;
+    height: 46px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #123a68;
+    color: #ffffff;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 5px 15px rgba(18, 58, 104, 0.20);
+
+    z-index: 999;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #0c2b4c;
+    transform: translateY(-3px);
+}
